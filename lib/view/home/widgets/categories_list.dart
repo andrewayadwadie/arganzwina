@@ -1,6 +1,4 @@
-import 'dart:developer';
 
-import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:arganzwina/view/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
