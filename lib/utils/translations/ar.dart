@@ -7,5 +7,9 @@ const Map<String, String> ar = {
   'profile': 'الملف الشخصي',
   'price': 'السعر',
   'price after offer': 'السعر بعد الخصم ',
-  'price before offer': 'السعر قبل الخصم '
+  'price before offer': 'السعر قبل الخصم ',
+  'quantity':'الكمية',
+  'offer':'عرض',
+  'Details':'التفاصيل',
+  'Add To Cart':'أضف إلى السلة',
 };

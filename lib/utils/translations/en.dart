@@ -7,5 +7,9 @@ const Map<String, String> en = {
   'profile': 'profile',
   'price': 'price',
   'price after offer': 'price after offer',
-  'price before offer': 'price before offer'
+  'price before offer': 'price before offer',
+  'quantity':'quantity',
+  'offer':'offer',
+  'Details':'Details',
+  'Add To Cart':'Add To Cart',
 };

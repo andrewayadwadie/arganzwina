@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:arganzwina/core/service/category_services.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +12,7 @@ class ProductsByCatId extends GetxController {
         loading.value = false;
       });
 
-      log("caaatttttt : $productsById");
+   //   log("caaatttttt : $productsById");
     }
     return productsById;
   }

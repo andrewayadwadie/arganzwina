@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
 
 const Color primaryColor = Color(0xff218875);
-const Color secondaryColor = Color(0xfff5ea00);
+const Color lightprimaryColor = Color(0xff71DFE7);
+const Color secondarylightprimaryColor = Color(0xffC2FFF9);
+const Color secondaryColor = Color(0xffFFE652);
 const Color redColor = Color(0xffed2024);
 const Color whiteColor = Color(0xFFFEFEFE);
 const Color blackColor = Color(0xFF030303);

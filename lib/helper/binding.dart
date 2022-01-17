@@ -8,9 +8,9 @@ import 'package:get/get.dart';
 class Binding extends Bindings {
   @override
   void dependencies() {
-    Get.put(() => AuthViewModel());
-    Get.put(() => ControlViewModel());
-    Get.put(() => AllCatController());
-    Get.put(() => ProductsByCatId());
+    Get.lazyPut(() => AuthViewModel());
+    Get.lazyPut(() => ControlViewModel());
+    Get.lazyPut(() => AllCatController());
+    Get.lazyPut(() => ProductsByCatId());
   }
 }
