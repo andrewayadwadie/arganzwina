@@ -12,4 +12,6 @@ const Map<String, String> ar = {
   'offer':'عرض',
   'Details':'التفاصيل',
   'Add To Cart':'أضف إلى السلة',
+  'TOTAL':'الإجمالى',
+  'CHECKOUT':'الدفع'
 };

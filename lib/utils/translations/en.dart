@@ -12,4 +12,6 @@ const Map<String, String> en = {
   'offer':'offer',
   'Details':'Details',
   'Add To Cart':'Add To Cart',
+  'TOTAL':'TOTAL',
+  'CHECKOUT':'CHECKOUT'
 };

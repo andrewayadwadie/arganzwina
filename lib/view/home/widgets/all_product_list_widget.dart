@@ -30,7 +30,7 @@ class AllProductListWidget extends StatelessWidget {
                   //   height: MediaQuery.of(context).size.height / 50,
                   decoration: BoxDecoration(
                       //    color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(12)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -41,11 +41,11 @@ class AllProductListWidget extends StatelessWidget {
                                 image: NetworkImage(
                                   'https://arganzwina.com/files/photos/134b38c0-e3f8-40e1-9a60-ecfcd47219a4_ماسك-الطين-المغربي-اي-هيرب.jpg',
                                 ),
-                                fit: BoxFit.fill),
+                                fit: BoxFit.fitWidth),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 topRight: Radius.circular(10))),
-                        height: MediaQuery.of(context).size.height / 5.5,
+                        height: MediaQuery.of(context).size.height /4.45,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 5),
@@ -59,10 +59,11 @@ class AllProductListWidget extends StatelessWidget {
                       ),
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
-                        height: MediaQuery.of(context).size.height / 14,
+                        height: MediaQuery.of(context).size.height / 25,
+                   //     decoration: BoxDecoration(border: Border.all(width: 1,color: Colors.red)),
                         child: const Text(
                           " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id risus luctus, feugiat dui non, auctor orci. Fusce in ante at turpis rutrum dapibus. Nulla facilisi. Nullam efficitur turpis neque, quis ullamcorper ligula porttitor rutrum. Suspendisse rutrum lectus id luctus ornare. Sed nec venenatis est. Proin in nulla mattis, varius lacus at, maximus enim. Maecenas felis metus, cursus non urna in, euismod ornare risus. Curabitur mattis, massa eget pulvinar sollicitudin, ligula eros accumsan massa, ac varius neque leo a orci. Curabitur vel dui nec nunc vestibulum condimentum. Vestibulum ut est nec odio mattis placerat eu sed turpis. Aliquam sed consequat dolor, egestas tempus lectus.",
-                          maxLines: 4,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                               height: 1.1,
@@ -74,9 +75,9 @@ class AllProductListWidget extends StatelessWidget {
                       ),
                       Container(
                         decoration:const BoxDecoration(
-                         //border: Border.all(width: 1,color: Colors.green)
+                  //       border: Border.all(width: 1,color: Colors.green)
                         ),
-                        height: MediaQuery.of(context).size.height / 23,
+                        height: MediaQuery.of(context).size.height / 26,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:const [
