@@ -3,6 +3,8 @@
 import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:arganzwina/view/category/widgets/category_cart_widget.dart';
+import 'package:arganzwina/view/widgets/custom_loader.dart';
+import 'package:arganzwina/view/widgets/custom_no_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,10 +22,11 @@ class CategoryViewScreen extends StatelessWidget {
         child: GetBuilder<ProductsByCatId>(builder: (controler){
           return 
            controller.loading == true
-               ? const Center(child:  CircularProgressIndicator()):
+               ? const LoaderWidget():
           SingleChildScrollView(
 
-            child: Column(
+            child: 
+          Column(
             children: [
               // ============= title =======================
               Container(
@@ -49,7 +52,9 @@ class CategoryViewScreen extends StatelessWidget {
               // ============= Category GridView =================
             
             
-              Container(
+            controller.productsById.isEmpty?
+          const  NoDataWidget():
+            Container(
                 height: MediaQuery.of(context).size.height/1.2,
                 decoration:const BoxDecoration(
             //   border: Border.all(width: 2,color: Colors.red)

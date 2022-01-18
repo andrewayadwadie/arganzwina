@@ -1,5 +1,6 @@
 
 import 'package:arganzwina/view/category/category_screen.dart';
+import 'package:arganzwina/view/widgets/custom_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class CategoriesListWidget extends StatelessWidget {
         init: Get.put(AllCatController()),
         builder: (controller) {
           return controller.loading == true
-              ? const Center(child: CircularProgressIndicator())
+              ? const LoaderWidget()
               : SizedBox(
                   height: MediaQuery.of(context).size.height / 20,
                   child: ListView.builder(
