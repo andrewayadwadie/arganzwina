@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:arganzwina/utils/style.dart';
@@ -13,73 +13,82 @@ class CategoryViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
        final ProductsByCatId controller = Get.put(ProductsByCatId(id: id));
+     //  final List<dynamic>li = controller.productsById;
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       body: SafeArea(
         child: GetBuilder<ProductsByCatId>(builder: (controler){
           return 
            controller.loading == true
                ? const Center(child:  CircularProgressIndicator()):
-          Column(
-          children: [
-            // ============= title =======================
-            SizedBox(
-              height: MediaQuery.of(context).size.height/12,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
+          SingleChildScrollView(
 
-                children: [
-                 
-                  IconButton(icon:const Icon(Icons.arrow_back_ios,color: blackColor,),onPressed: ()=>Get.back()),
-                  const Spacer(),
-                    Text(catName,
-                   style:const TextStyle(
-                     fontSize: 16
-                   ),
-                   ),
-                   const Spacer()
-                ],
-              ),
-            ),
-            // ============= Category GridView =================
+            child: Column(
+            children: [
+              // ============= title =======================
+              Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height/12,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
           
-          
-            Container(
-              height: MediaQuery.of(context).size.height/1.2,
-              decoration:const BoxDecoration(
-             
+                  children: [
+                   
+                    IconButton(icon:const Icon(Icons.arrow_back_ios,color: blackColor,),onPressed: ()=>Get.back()),
+                    const Spacer(),
+                      Text(catName,
+                     style:const TextStyle(
+                       fontSize: 16
+                     ),
+                     ),
+                     const Spacer()
+                  ],
+                ),
               ),
-              margin:const EdgeInsets.symmetric(vertical:10,horizontal: 15),
-              padding:const  EdgeInsets.only(top: 15),
-              child: GridView.builder(
-                  padding:const EdgeInsets.only(right: 10, left: 10, bottom: 10),
-                  shrinkWrap: true,
-                  physics:const BouncingScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  gridDelegate:const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 200,
-                      childAspectRatio: 1 / 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 20),
-                  itemCount:controller.productsById.length,
-                  itemBuilder: (BuildContext context, index) {
-                    List<dynamic> li = controller.productsById;
-                    log(" ${li[1].photoPath}");
-                    return
+              // ============= Category GridView =================
+            
+            
+              Container(
+                height: MediaQuery.of(context).size.height/1.2,
+                decoration:const BoxDecoration(
+            //   border: Border.all(width: 2,color: Colors.red)
+                ),
+                margin:const EdgeInsets.symmetric(vertical:10,horizontal: 15),
+                padding:const  EdgeInsets.only(top: 15),
+                child: GridView.builder(
+                    padding:const EdgeInsets.only(right: 10, left: 10, bottom: 10),
+                    shrinkWrap: true,
+                    physics:const BouncingScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    gridDelegate:const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 200,
+                        childAspectRatio: 1 / 2,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 20),
+                    itemCount:controller.productsById.length,
+                    itemBuilder: (BuildContext context, index) {
                     
-                    
-                    const CategoryCartWidget(
-                      photoPath:'af970cae-8a59-4e02-8437-84780d7b915a_الغاسول-المغربي.jpg',
-                      name: "pro name ",
-                      description: "prfdgodfnhk dhkdrtjgh dtrh ",
-                      price: 36.0,
-                    )
-                    
-                    ;
-                  }),
-            ),
-          ],
-        ) ; 
+                   //   log("teeeest ${li[1].photoPath}");
+                      return
+                      
+                      
+                       CategoryCartWidget(
+                        photoPath:controller.productsById[index].photoPath,
+                        name: controller.productsById[index].name,
+                        description: controller.productsById[index].description,
+                        price: 
+                         controller.productsById[index].hasOffer==false? 
+                        controller.productsById[index].price:
+                         controller.productsById[index].priceAfterOffer,
+                      )
+                      
+                      ;
+                    }),
+              ),
+            ],
+                  ),
+          ) ; 
         }) 
       
       ),

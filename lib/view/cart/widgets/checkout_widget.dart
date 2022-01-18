@@ -1,5 +1,4 @@
 import 'package:arganzwina/utils/style.dart';
-import 'package:arganzwina/view/category/category_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
