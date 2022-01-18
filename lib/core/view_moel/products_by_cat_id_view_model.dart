@@ -10,34 +10,20 @@ class ProductsByCatId extends GetxController {
 
  @override
   void onInit() {
-  
   getProductData(id!);
     super.onInit();
-   
   }
-
  bool get loading => _loading.value;
+ 
   List<dynamic> getProductData(int id) {
-   
     if(_loading.value==true){
        CategoryServices.getProductByCatId(id).then((value) {
         productsById = value;
-      //  log ("api res ${value}");
         _loading.value = false;
         update();
-      
       }
       
-      );
-    }
-     
-
-   //   log("caaatttttt : $productsById");
-   
+      );}
     return productsById;
   }
-
-
-
-
 }

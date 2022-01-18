@@ -13,5 +13,6 @@ const Map<String, String> en = {
   'Details':'Details',
   'Add To Cart':'Add To Cart',
   'TOTAL':'TOTAL',
-  'CHECKOUT':'CHECKOUT'
+  'CHECKOUT':'CHECKOUT',
+  'Please enter search keyWrod':'Please enter search keyWrod'
 };

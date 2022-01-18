@@ -67,3 +67,40 @@ class CatSingleProduct {
     );
   }
 }
+
+
+
+class SearchProductModel {
+  final int id;
+  final String name;
+  final String description;
+  final double price;
+  final bool hasOffer;
+  final double priceAfterOffer;
+  final int quantity;
+  final String photoPath;
+
+  SearchProductModel({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.price,
+    required this.hasOffer,
+    required this.priceAfterOffer,
+    required this.quantity,
+    required this.photoPath,
+  });
+
+  factory SearchProductModel.fromJson(Map<String, dynamic> jsonData) {
+    return SearchProductModel(
+      id: jsonData['id'],
+      name: jsonData['name'],
+      description: jsonData['description'],
+      photoPath: jsonData['photoPath'],
+      hasOffer: jsonData['hasOffer'],
+      price: jsonData['price'],
+      quantity: jsonData['quantity'],
+      priceAfterOffer: jsonData['priceAfterOffer'] ?? 0.0,
+    );
+  }
+}

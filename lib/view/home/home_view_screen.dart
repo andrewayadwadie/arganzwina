@@ -49,7 +49,7 @@ class HomeViewScreen extends StatelessWidget {
                         ),
 
                         /// search in all products
-                        const HomeFormWidget(),
+                         HomeFormWidget(),
 
                         SizedBox(
                           height: MediaQuery.of(context).size.height / 19,
@@ -91,14 +91,15 @@ class HomeViewScreen extends StatelessWidget {
                                       MediaQuery.of(context).size.height / 25,
                                   width: MediaQuery.of(context).size.width / 4,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(22),
                                     color: primaryColor,
                                   ),
                                   child: Text(
                                     'See All'.tr,
+                                    textAlign: TextAlign.center,
                                     style: const TextStyle(
                                         color: Colors.white,
-                                        fontSize: 18,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),

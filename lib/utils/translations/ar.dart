@@ -13,5 +13,6 @@ const Map<String, String> ar = {
   'Details':'التفاصيل',
   'Add To Cart':'أضف إلى السلة',
   'TOTAL':'الإجمالى',
-  'CHECKOUT':'الدفع'
+  'CHECKOUT':'الدفع',
+  'Please enter search keyWrod':'برجاء إدخال كلمات مفتاحية للبحث'
 };
