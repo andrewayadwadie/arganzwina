@@ -1,16 +1,23 @@
+import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:arganzwina/view/category/widgets/category_cart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CategoryViewScreen extends StatelessWidget {
-  const CategoryViewScreen({ Key? key }) : super(key: key);
-
+  const CategoryViewScreen({ Key? key,required this.id,required this.catName }) : super(key: key);
+ final int id;
+ final String catName ;
   @override
   Widget build(BuildContext context) {
+       final ProductsByCatId controller = Get.put(ProductsByCatId(id: id));
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: GetBuilder<ProductsByCatId>(builder: (controler){
+          return 
+           controller.loading == true
+               ? const Center(child:  CircularProgressIndicator()):
+          Column(
           children: [
             // ============= title =======================
             SizedBox(
@@ -23,8 +30,8 @@ class CategoryViewScreen extends StatelessWidget {
                  
                   IconButton(icon:const Icon(Icons.arrow_back_ios,color: blackColor,),onPressed: ()=>Get.back()),
                   const Spacer(),
-                   const Text("category Name",
-                   style: TextStyle(
+                    Text(catName,
+                   style:const TextStyle(
                      fontSize: 16
                    ),
                    ),
@@ -33,6 +40,8 @@ class CategoryViewScreen extends StatelessWidget {
               ),
             ),
             // ============= Category GridView =================
+          
+          
             Container(
               height: MediaQuery.of(context).size.height/1.2,
               decoration:const BoxDecoration(
@@ -50,13 +59,14 @@ class CategoryViewScreen extends StatelessWidget {
                       childAspectRatio: 1 / 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 20),
-                  itemCount: 4,
+                  itemCount:controller.productsById.length,
                   itemBuilder: (BuildContext ctx, index) {
                     return const CategoryCartWidget();
                   }),
             ),
           ],
-        ) 
+        ) ; 
+        }) 
       
       ),
     );

@@ -1,4 +1,5 @@
 
+import 'package:arganzwina/view/category/category_screen.dart';
 import 'package:arganzwina/view/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class CategoriesListWidget extends StatelessWidget {
                         return InkWell(
                           onTap: () {
                             Get.to(() =>
-                                TestScreen(id: controller.cats[index].id));
+                                CategoryViewScreen(id: controller.cats[index].id,catName: controller.cats[index].name,));
                           },
                           child: Container(
                             alignment: Alignment.center,

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:arganzwina/core/service/category_services.dart';
 import 'package:get/get.dart';
@@ -7,7 +6,7 @@ class ProductsByCatId extends GetxController {
   final int? id;
   ProductsByCatId({  this.id});
   List<dynamic> productsById = [].obs;
-   RxBool  _loading = true.obs;
+ final  RxBool  _loading = true.obs;
 
  @override
   void onInit() {
@@ -20,10 +19,10 @@ class ProductsByCatId extends GetxController {
  bool get loading => _loading.value;
   List<dynamic> getProductData(int id) {
    
-;    if(_loading.value==true){
+    if(_loading.value==true){
        CategoryServices.getProductByCatId(id).then((value) {
         productsById = value;
-        log ("api res ${value}");
+      //  log ("api res ${value}");
         _loading.value = false;
         update();
       

@@ -43,7 +43,7 @@ class ProductPriceWidget extends StatelessWidget {
                 ,
                   InkWell(
                     onTap: (){
-                      Get.to(()=>const CategoryViewScreen());
+                   //   Get.to(()=>const CategoryViewScreen());
                     },
                     child: Container(
                       alignment: Alignment.center,

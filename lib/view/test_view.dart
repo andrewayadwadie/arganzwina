@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class TestScreen extends StatelessWidget {
      final ProductsByCatId controller = Get.put(ProductsByCatId(id: id));
     return Scaffold(
         body:  GetBuilder<ProductsByCatId>(builder: (contoller){
-           log ("${controller.loading} ");
+         
           return Center(
             child: 
            controller.loading == true
