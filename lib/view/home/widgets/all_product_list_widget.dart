@@ -18,7 +18,9 @@ class AllProductListWidget extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: (){
-                Get.to(()=>const ProductViewScreen());
+                // Get.to(()=>const ProductViewScreen(
+
+                // ));
               },
               child: Container(
                   alignment: Alignment.center,

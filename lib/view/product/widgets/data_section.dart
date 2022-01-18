@@ -2,8 +2,16 @@ import 'package:arganzwina/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 class ProductDataWidget extends StatelessWidget {
-  const ProductDataWidget({ Key? key }) : super(key: key);
+  const ProductDataWidget({ Key? key,
+  required this.quantity,
+   this.hasOffer,
+   required this.name, 
+  required  this.description }) : super(key: key);
+ final int quantity ; 
+  final bool? hasOffer;
 
+  final String name ;
+  final String description;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,8 +27,8 @@ class ProductDataWidget extends StatelessWidget {
                   children: [
 
                     //================= Product Title ========================
-             const Text("Product Title",
-                    style: TextStyle(
+              Text(name,
+                    style:const TextStyle(
                       color: blackColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 23
@@ -49,8 +57,8 @@ class ProductDataWidget extends StatelessWidget {
                               ),
                               
                               ),
-                              const Text("25 " ,
-                              style: TextStyle(
+                               Text("$quantity " ,
+                              style:const TextStyle(
                                 color: blackColor,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold
@@ -76,8 +84,14 @@ class ProductDataWidget extends StatelessWidget {
                               ),
                               
                               ),
-                           const  Icon(Icons.done_sharp,
-                             color: Colors.green,
+                             Icon(
+                             hasOffer==true?
+                             Icons.done_sharp:
+                             Icons.cancel_sharp,
+                             color:
+                              hasOffer==true?
+                              Colors.green:
+                              Colors.red,
                              size: 30,
                              )
                             ],
@@ -96,13 +110,15 @@ class ProductDataWidget extends StatelessWidget {
                     ),
                     /// =============== Description =============
                   Container(
+                    decoration: const BoxDecoration(
+                  
+                    ),
                         margin: const EdgeInsets.only(top: 5,bottom: 5,right: 15,left: 15),
                    //     height: MediaQuery.of(context).size.height,
-                        child: const Text(
-                          " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id risus luctus, feugiat dui non, auctor orci. Fusce in ante at turpis rutrum dapibus. Nulla facilisi. Nullam efficitur turpis neque, quis ullamcorper ligula porttitor rutrum. Suspendisse rutrum lectus id luctus ornare. Sed nec venenatis est. Proin in nulla mattis, varius lacus at, maximus enim. Maecenas felis metus, cursus non urna in, euismod ornare risus. Curabitur mattis, massa eget pulvinar sollicitudin, ligula eros accumsan massa, ac varius neque leo a orci. Curabitur vel dui nec nunc vestibulum condimentum. Vestibulum ut est nec odio mattis placerat eu sed turpis. Aliquam sed consequat dolor, egestas tempus lectus.",
-                          maxLines: 11,
+                        child:  Text(
+                         description,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style:const TextStyle(
                               height: 1.8,
                               color: blackColor,
                               fontSize: 15,

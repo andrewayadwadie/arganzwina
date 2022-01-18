@@ -1,6 +1,7 @@
 import 'package:arganzwina/core/view_moel/search_view_model.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:arganzwina/view/category/widgets/category_cart_widget.dart';
+import 'package:arganzwina/view/product/product_screen.dart';
 import 'package:arganzwina/view/widgets/custom_loader.dart';
 import 'package:arganzwina/view/widgets/custom_no_data.dart';
 import 'package:flutter/material.dart';
@@ -74,13 +75,23 @@ final String word;
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 20),
                     itemCount:controller.searchData.length,
-                    itemBuilder: (BuildContext context, index) {
-                    
-                   //   log("teeeest ${li[1].photoPath}");
-                      return
-                      
-                      
-                       CategoryCartWidget(
+                    itemBuilder: (BuildContext context, index) {  
+                      return 
+                      InkWell(
+                         onTap: ()=>Get.to(
+                           ProductViewScreen(
+                          id: controller.searchData[index].id,
+                          name: controller.searchData[index].name,
+                           description: controller.searchData[index].description,
+                            photoPath: controller.searchData[index].photoPath,
+                             price: controller.searchData[index].hasOffer==false? 
+                          controller.searchData[index].price:
+                           controller.searchData[index].priceAfterOffer,
+                             hasOffer: controller.searchData[index].hasOffer,
+                            quantity: controller.searchData[index].quantity,
+                             priceAfterOffer: controller.searchData[index].priceAfterOffer)
+                         ),
+                    child:  CategoryCartWidget(
                         photoPath:controller.searchData[index].photoPath,
                         name: controller.searchData[index].name,
                         description: controller.searchData[index].description,
@@ -88,7 +99,7 @@ final String word;
                          controller.searchData[index].hasOffer==false? 
                         controller.searchData[index].price:
                          controller.searchData[index].priceAfterOffer,
-                      )
+                      ))
                       
                       ;
                     }),

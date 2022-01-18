@@ -1,19 +1,20 @@
+import 'package:arganzwina/utils/constants.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductPictureWidget extends StatelessWidget {
-  const ProductPictureWidget({ Key? key }) : super(key: key);
-
+  const ProductPictureWidget({ Key? key,required this.photoPath }) : super(key: key);
+final String photoPath;
   @override
   Widget build(BuildContext context) {
     return  Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height/4,
-              decoration:const BoxDecoration(
+              decoration: BoxDecoration(
                 // border: Border.all(width: 2,color: lightprimaryColor),
                 image: DecorationImage(
-                  image: NetworkImage('https://arganzwina.com/files/photos/d47dd8c8-4461-434a-a552-824862e8a84b_download.jpg',),fit: BoxFit.fitWidth
+                  image: NetworkImage('$imageUrl$photoPath',),fit: BoxFit.fitWidth
                 )
               ),
              child:Stack(

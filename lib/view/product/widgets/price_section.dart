@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductPriceWidget extends StatelessWidget {
-  const ProductPriceWidget({ Key? key }) : super(key: key);
-
+  const ProductPriceWidget({ Key? key ,required this.price,required this.id}) : super(key: key);
+final double?  price ;
+final int id;
   @override
   Widget build(BuildContext context) {
     return Container(
               width: double.infinity,
-              margin:const EdgeInsets.symmetric(horizontal:25,),
+              padding:const EdgeInsets.symmetric(horizontal:25,),
               height: MediaQuery.of(context).size.height/10,
               decoration:const BoxDecoration(
                 color: Colors.white
@@ -31,8 +32,8 @@ class ProductPriceWidget extends StatelessWidget {
                     ), 
                      
                     ),
-                  const  Text('775',
-                    style:  TextStyle(
+                    Text('$price',
+                    style:const  TextStyle(
                       color: primaryColor,
                       fontSize: 25,
                       fontWeight: FontWeight.bold
