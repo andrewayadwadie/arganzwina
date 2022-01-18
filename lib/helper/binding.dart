@@ -11,6 +11,6 @@ class Binding extends Bindings {
     Get.lazyPut(() => AuthViewModel());
     Get.lazyPut(() => ControlViewModel());
     Get.lazyPut(() => AllCatController());
-    Get.lazyPut(() => ProductsByCatId());
+    Get.put(() => ProductsByCatId());
   }
 }

@@ -66,7 +66,7 @@ class HomeViewScreen extends StatelessWidget {
                         ),
 
                         /// categories list
-                        const CategoriesListWidget(),
+                      const   CategoriesListWidget(),
                         SizedBox(
                           height: MediaQuery.of(context).size.height / 19,
                         ),

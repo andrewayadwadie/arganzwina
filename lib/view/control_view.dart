@@ -21,6 +21,7 @@ class ControlView extends StatelessWidget {
         init: ControlViewModel(),
         builder: (controller) {
           return BottomNavigationBar(
+            
             showSelectedLabels: false,
             showUnselectedLabels: false,
             elevation: 0,
