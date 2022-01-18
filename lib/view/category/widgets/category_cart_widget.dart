@@ -1,8 +1,18 @@
+import 'package:arganzwina/utils/constants.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCartWidget extends StatelessWidget {
-  const CategoryCartWidget({ Key? key }) : super(key: key);
+  const CategoryCartWidget({ Key? key,
+  required this.photoPath,
+  required this.description,
+  required this.name,
+  required this.price }) 
+  : super(key: key);
+  final String? photoPath;
+  final String? description ;
+  final String? name;
+  final double? price ;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +29,8 @@ class CategoryCartWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
         
-                      image:const  DecorationImage(
-                        image: NetworkImage('https://arganzwina.com/files/photos/d47dd8c8-4461-434a-a552-824862e8a84b_download.jpg',),
+                      image:  DecorationImage(
+                        image: NetworkImage("$imageUrl${photoPath!}",),
                         fit: BoxFit.fitHeight
                       )
                     ),
@@ -39,10 +49,10 @@ class CategoryCartWidget extends StatelessWidget {
                   height: MediaQuery.of(context).size.height/10,    
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const[
+                    children: [
                       //====================== product Title ====================
-                       Text("Product Title ",
-                            style: TextStyle(
+                       Text(name!,
+                            style:const TextStyle(
                               color: blackColor,
                               fontSize: 15,
                               fontWeight: FontWeight.w500
@@ -50,18 +60,18 @@ class CategoryCartWidget extends StatelessWidget {
                             
                       ),
                       Text(
-                          " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id risus luctus, feugiat dui non, auctor orci.",
+                          description!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style:const TextStyle(
                               height: 1.2,
                               color: greyColor,
                               fontSize: 12,
                               fontFamily: 'hanimation',
                               fontWeight: FontWeight.normal),
                         ),
-                         Text("775",
-                            style: TextStyle(
+                         Text("${price!}",
+                            style: const TextStyle(
                               
                               color: primaryColor,
                               fontSize: 15,

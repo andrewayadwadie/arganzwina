@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:arganzwina/core/view_moel/products_by_cat_id_view_model.dart';
 import 'package:arganzwina/utils/style.dart';
 import 'package:arganzwina/view/category/widgets/category_cart_widget.dart';
@@ -60,8 +62,20 @@ class CategoryViewScreen extends StatelessWidget {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 20),
                   itemCount:controller.productsById.length,
-                  itemBuilder: (BuildContext ctx, index) {
-                    return const CategoryCartWidget();
+                  itemBuilder: (BuildContext context, index) {
+                    List<dynamic> li = controller.productsById;
+                    log(" ${li[1].photoPath}");
+                    return
+                    
+                    
+                    const CategoryCartWidget(
+                      photoPath:'af970cae-8a59-4e02-8437-84780d7b915a_الغاسول-المغربي.jpg',
+                      name: "pro name ",
+                      description: "prfdgodfnhk dhkdrtjgh dtrh ",
+                      price: 36.0,
+                    )
+                    
+                    ;
                   }),
             ),
           ],
