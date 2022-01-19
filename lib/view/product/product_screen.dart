@@ -43,6 +43,7 @@ class ProductViewScreen extends StatelessWidget {
              ProductDataWidget(quantity: quantity,hasOffer: hasOffer,name: name,description: description,),
              // ======================== price& add to cart section  =====================
              ProductPriceWidget(
+               quantity: quantity,
                id: id,
                price: hasOffer==true?
                       priceAfterOffer:

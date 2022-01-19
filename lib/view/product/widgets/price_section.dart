@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductPriceWidget extends StatelessWidget {
-  const ProductPriceWidget({ Key? key ,required this.price,required this.id}) : super(key: key);
+  const ProductPriceWidget({ Key? key ,required this.price,required this.id,required this.quantity}) : super(key: key);
 final double?  price ;
 final int id;
+final int quantity;
   @override
   Widget build(BuildContext context) {
     return Container(

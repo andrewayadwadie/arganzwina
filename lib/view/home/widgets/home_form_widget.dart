@@ -3,10 +3,18 @@ import 'package:arganzwina/view/search/search_view_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeFormWidget extends StatelessWidget {
-   HomeFormWidget({Key? key}) : super(key: key);
+class HomeFormWidget extends StatefulWidget {
+  const HomeFormWidget({Key? key}) : super(key: key);
+
+  @override
+  State<HomeFormWidget> createState() => _HomeFormWidgetState();
+}
+
+class _HomeFormWidgetState extends State<HomeFormWidget> {
  final _formKey = GlobalKey<FormState>();
- String searchWord='' ;
+
+  String searchWord='' ;
+
   @override
   Widget build(BuildContext context) {
     return Container(

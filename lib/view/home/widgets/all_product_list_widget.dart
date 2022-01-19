@@ -1,7 +1,5 @@
 import 'package:arganzwina/utils/style.dart';
-import 'package:arganzwina/view/product/product_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class AllProductListWidget extends StatelessWidget {
   const AllProductListWidget({Key? key}) : super(key: key);
