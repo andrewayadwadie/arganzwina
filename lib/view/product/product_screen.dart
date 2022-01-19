@@ -45,6 +45,8 @@ class ProductViewScreen extends StatelessWidget {
              ProductPriceWidget(
                quantity: quantity,
                id: id,
+               name: name,
+               photoPath: photoPath,
                price: hasOffer==true?
                       priceAfterOffer:
                       price

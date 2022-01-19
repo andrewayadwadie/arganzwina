@@ -49,7 +49,7 @@ class HomeViewScreen extends StatelessWidget {
                         ),
 
                         /// search in all products
-                         HomeFormWidget(),
+                   const      HomeFormWidget(),
 
                         SizedBox(
                           height: MediaQuery.of(context).size.height / 19,

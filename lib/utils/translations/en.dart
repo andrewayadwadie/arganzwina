@@ -14,5 +14,12 @@ const Map<String, String> en = {
   'Add To Cart':'Add To Cart',
   'TOTAL':'TOTAL',
   'CHECKOUT':'CHECKOUT',
-  'Please enter search keyWrod':'Please enter search keyWrod'
+  'Please enter search keyWrod':'Please enter search keyWrod',
+  "Total price doesn't include tax":"Total price doesn't include tax",
+  "Taxable total price":"Taxable total price",
+  "Tax value":"Tax value",
+  "Total price inclusive tax value":"Total price inclusive tax value",
+  "Total price summation":"Total price summation",
+  "This total price doesn't include delivery costs":"This total price doesn't include delivery costs",
+  "hint : ":"hint : "
 };

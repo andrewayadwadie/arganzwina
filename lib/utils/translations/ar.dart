@@ -14,5 +14,12 @@ const Map<String, String> ar = {
   'Add To Cart':'أضف إلى السلة',
   'TOTAL':'الإجمالى',
   'CHECKOUT':'الدفع',
-  'Please enter search keyWrod':'برجاء إدخال كلمات مفتاحية للبحث'
+  'Please enter search keyWrod':'برجاء إدخال كلمات مفتاحية للبحث',
+  "Total price doesn't include tax":"المجموع غير شامل الضريبة",
+  "Taxable total price":"المجموع الخاضع للضريبة",
+  "Tax value":"ضريبة القيمة المضافة",
+  "Total price inclusive tax value":"المجموع شامل ضريبة القيمة المضافة",
+  "Total price summation":"المجموع الكلى",
+  "This total price doesn't include delivery costs":"هذا المجموع لايشمل تكاليف التوصيل ",
+  "hint : ":"ملحوظة : "
 };
